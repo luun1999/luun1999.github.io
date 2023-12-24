@@ -15,10 +15,10 @@
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
-        <form action="">
-          <input id="inputField" value="" aria-label="" placeholder="asdsa" style="position: absolute; top: 1000%; width: 0; height: 0; z-index: -9999;"></input>
+        <form action="" style="display: none;">
+          <input id="inputField" value="" aria-label="" placeholder="asdsa" onchange="OnInputChange(value)"></input>
         </form>
-        <button type="button" onclick="toggleInputField()">Button Toggle</button>
+        <button onclick="toggleInputField()">Button Toggle</button>
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
@@ -65,10 +65,6 @@
       {
         inputField.focus();
       }
-      function unFocusInputField()
-      {
-        inputField.blur();
-      }
 
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/Build.loader.js";
@@ -83,8 +79,8 @@
         showBanner: unityShowBanner,
       };
       
-      inputField.addEventListener("input", (event) => {
-        console.log(inputField.value);
+      inputField.addEventListener("change", (event) => {
+        OnInputChange(event.target.value);
       });
       // By default, Unity keeps WebGL canvas render target size matched with
       // the DOM size of the canvas element (scaled by window.devicePixelRatio)
