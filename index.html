@@ -15,10 +15,10 @@
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
-        <form action="" style="display: none;">
-          <input id="inputField" value="" aria-label="" placeholder="asdsa" onchange="OnInputChange(value)"></input>
+        <form action="">
+          <input id="inputField" value="" aria-label="" placeholder="asdsa" onchange="OnInputChange(value)" style="position: absolute; visibility: hidden; z-index: -9999;"></input>
         </form>
-        <button onclick="toggleInputField()">Button Toggle</button>
+        <button type="button" onclick="toggleInputField()">Button Toggle</button>
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
